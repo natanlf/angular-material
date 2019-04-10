@@ -32,7 +32,12 @@
         
 
   </mat-drawer-container>
-  
-  <div class="example-box" cdkDrag>
+
+  <div class="example-box-1" cdkDrag>
       Drag me around
     </div>
+
+    <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let movie of movies" cdkDrag>{{movie}}</div>
+      </div>
+      
