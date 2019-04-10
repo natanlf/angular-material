@@ -29,66 +29,10 @@
       
     </div>
 
-    <mat-accordion>
-        <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              Personal data
-            </mat-panel-title>
-            <mat-panel-description>
-              Type your name and age
-            </mat-panel-description>
-          </mat-expansion-panel-header>
-          
-          
-          <form>
-            <mat-form-field>
-              <input matInput type="text" [(ngModel)]="nome" name="nome" placeholder="First name">
-            </mat-form-field>
-        
-            <mat-form-field>
-              <input type="text" matInput [(ngModel)]="idade" name="idade" placeholder="Age">
-            </mat-form-field>
-
-            <button (click)="save()" mat-mini-fab color="primary">
-              <mat-icon>save</mat-icon>
-            </button>
-          </form>
-
-        </mat-expansion-panel>
-      
-      </mat-accordion>
-      
-      <table mat-table [dataSource]="dataSource" class="mat-table">
-
-          <!--- Note that these columns can be defined in any order.
-                The actual rendered columns are set as a property on the row definition" -->
-        
-          <!-- Position Column -->
-          <ng-container matColumnDef="nome">
-            <th mat-header-cell *matHeaderCellDef> Nome </th>
-            <td mat-cell *matCellDef="let element"> {{element.nome}} </td>
-          </ng-container>
-        
-          <!-- Name Column -->
-          <ng-container matColumnDef="idade">
-            <th mat-header-cell *matHeaderCellDef> Idade </th>
-            <td mat-cell *matCellDef="let element"> {{element.idade}} </td>
-          </ng-container>
-        
-        
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-        </table>
-        
         
 
   </mat-drawer-container>
   
-
-
-  
-<button mat-mini-fab matTooltip="Atualizar lista">
-  <mat-icon>refresh</mat-icon>
-</button>
-<br/><br/>
+  <div class="example-box" cdkDrag>
+      Drag me around
+    </div>
