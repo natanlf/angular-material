@@ -1,5 +1,44 @@
-<button class="refresh" mat-mini-fab matTooltip="Atualizar lista">
+<mat-toolbar color="primary">
+    <span>My Application</span>
+  </mat-toolbar>
+<br/>
+
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+        <mat-list>
+            <mat-list-item>Home</mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+                <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+                <br/>
+                <button (click)="showFiller = !showFiller" mat-raised-button>
+                  Toggle extra text
+                </button>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>Item 3</mat-list-item>
+          </mat-list>          
+
+    </mat-drawer>
+  
+    <div class="example-sidenav-content">
+      <button type="button" mat-button (click)="drawer.toggle()">
+          <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+      <mat-grid-list class="mt-30 w-70-p" cols="2" rowHeight="2:1">
+        <mat-grid-tile>1</mat-grid-tile>
+        <mat-grid-tile>2</mat-grid-tile>
+        <mat-grid-tile>3</mat-grid-tile>
+        <mat-grid-tile>4</mat-grid-tile>
+      </mat-grid-list>
+
+  </mat-drawer-container>
+  
+
+
+  
+<button mat-mini-fab matTooltip="Atualizar lista">
   <mat-icon>refresh</mat-icon>
 </button>
 <br/><br/>
-<mat-card>Simple card</mat-card>

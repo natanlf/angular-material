@@ -1,6 +1,4 @@
 import { Component, OnInit, NgModule } from '@angular/core';
-import {MatButtonModule, MatCheckboxModule} from '@angular/material';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @Component({
   selector: 'app-home',
@@ -9,6 +7,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 })
 
 export class HomeComponent implements OnInit {
+
+  showFiller = false;
 
   constructor() { }
 
