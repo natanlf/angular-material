@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+  <!--<a [routerLink]="['/']"><b>My Application</b></a>-->
+</mat-toolbar>
+
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+      <mat-list>
+          <mat-list-item>Home</mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item routerLinkActive="active">
+              <p routerLinkActive="active"><a [routerLink]="['/about']">Sobre</a></p>
+          </mat-list-item>
+        </mat-list>          
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <button type="button" mat-button (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    
+  </div>
+
+</mat-drawer-container>
