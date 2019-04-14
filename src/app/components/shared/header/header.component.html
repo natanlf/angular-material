@@ -2,12 +2,18 @@
   <!--<a [routerLink]="['/']"><b>My Application</b></a>-->
 </mat-toolbar>
 
-<mat-drawer-container class="example-container" autosize>
-  <mat-drawer #drawer class="example-sidenav" mode="side">
+<mat-drawer-container class="menu-container" autosize>
+  <mat-drawer #drawer mode="side" class="menu-items">
       <mat-list>
-          <mat-list-item>Home</mat-list-item>
+          <mat-list-item routerLinkActive="active" class="item-menu row">
+            <i class="material-icons md-48 ml-3">home</i><a class="text-dark mt-3" [routerLink]="['/']">Home</a>
+          </mat-list-item>
           <mat-divider></mat-divider>
-          <mat-list-item routerLinkActive="active">
+          <mat-list-item routerLinkActive="active" class="item-menu row">
+            <i class="material-icons md-48 ml-3">category</i><a class="text-dark mt-3" [routerLink]="['/categoria']">Categoria</a>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item routerLinkActive="active" class="item-menu">
               <p routerLinkActive="active"><a [routerLink]="['/about']">Sobre</a></p>
           </mat-list-item>
         </mat-list>          

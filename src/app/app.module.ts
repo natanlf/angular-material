@@ -11,13 +11,15 @@ import { ROUTES } from './app.routes';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { HeaderComponent } from './components/shared/header/header.component';
+import { CategriaComponent } from './components/categria/categria.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AboutComponent,
-    HeaderComponent
+    HeaderComponent,
+    CategriaComponent
   ],
   imports: [
     BrowserModule,
