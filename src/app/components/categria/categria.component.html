@@ -1,4 +1,30 @@
 <app-header></app-header>
-<p>
-  categria works!
-</p>
+<!--INICIO DO CONTEUDO-->
+<section class="content">
+  <section class="invoice">
+
+        <!-- Agora usamos o formGroup para controlar o form -->
+        <form [formGroup]="orderForm" novalidate>
+      
+          <div class="row">
+            <div class="col-sm-6 col-xs-12">
+              <!-- Chamo o componente input passando os parametros de errorMessage, label e o próprio input -->
+              <app-input errorMessage="Campo obrigatório e com 5 caracteres" label="teste Nome">
+                <input type="text" class="form-control" formControlName="name" placeholder="Nome" autocomplete="off">
+              </app-input>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-12"> <!-- agora o formulário é orderForm -->
+              <button (click)="save(orderForm.value)" class="btn btn-success pull-right" [disabled]="!orderForm.valid">
+                <i class="fa fa-credit-card"></i> Concluir
+              </button>
+            </div>
+          </div>
+
+        </form>
+
+    </section>
+</section>
+<!-- FIM DO CONTEUDO-->

@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './shared/modules/angular-material.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { RouterModule } from '@angular/router';
 import { ROUTES } from './app.routes';
@@ -12,6 +12,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { HeaderComponent } from './components/shared/header/header.component';
 import { CategriaComponent } from './components/categria/categria.component';
+import { InputComponent } from './shared/input/input.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CategriaComponent } from './components/categria/categria.component';
     HomeComponent,
     AboutComponent,
     HeaderComponent,
-    CategriaComponent
+    CategriaComponent,
+    InputComponent
   ],
   imports: [
     BrowserModule,
@@ -27,6 +29,7 @@ import { CategriaComponent } from './components/categria/categria.component';
     AngularMaterialModule,
     FormsModule,
     DragDropModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(ROUTES)
   ],
   providers: [],
