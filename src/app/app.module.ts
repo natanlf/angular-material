@@ -13,6 +13,7 @@ import { AboutComponent } from './components/about/about.component';
 import { HeaderComponent } from './components/shared/header/header.component';
 import { CategriaComponent } from './components/categria/categria.component';
 import { InputComponent } from './shared/input/input.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { InputComponent } from './shared/input/input.component';
     FormsModule,
     DragDropModule,
     ReactiveFormsModule,
+    FlexLayoutModule,
     RouterModule.forRoot(ROUTES)
   ],
   providers: [],

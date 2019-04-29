@@ -2,28 +2,19 @@
   <!--<a [routerLink]="['/']"><b>My Application</b></a>-->
 </mat-toolbar>
 
-<mat-drawer-container class="menu-container" autosize>
-  <mat-drawer #drawer mode="side" class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3">
-      <mat-list>
-          <mat-list-item routerLinkActive="active" class="item-menu row">
-            <i class="material-icons md-48 ml-3">home</i><a class="text-dark mt-3" [routerLink]="['/']">Home</a>
-          </mat-list-item>
-          <mat-divider></mat-divider>
-          <mat-list-item routerLinkActive="active" class="item-menu row">
-            <i class="material-icons md-48 ml-3">category</i><a class="text-dark mt-3" [routerLink]="['/categoria']">Categoria</a>
-          </mat-list-item>
-          <mat-divider></mat-divider>
-          <mat-list-item routerLinkActive="active" class="item-menu">
-              <p routerLinkActive="active"><a [routerLink]="['/about']">Sobre</a></p>
-          </mat-list-item>
-        </mat-list>          
-  </mat-drawer>
+<mat-drawer-container autosize>
 
-  <div class="example-sidenav-content">
-    <button type="button" mat-button (click)="drawer.toggle()">
-        <mat-icon>menu</mat-icon>
+  <button mat-button [matMenuTriggerFor]="menu"><i class="material-icons md-48">menu</i></button>
+  <mat-menu #menu="matMenu">
+    <button routerLinkActive="active" mat-menu-item>
+      <a [routerLink]="['/']">Home</a>
     </button>
-    
-  </div>
+    <button routerLinkActive="active" mat-menu-item>
+      <a [routerLink]="['/categoria']">Categoria</a>
+    </button>
+    <button routerLinkActive="active" mat-menu-item>
+      <a [routerLink]="['/about']">Sobre</a>
+    </button>
+  </mat-menu>
 
 </mat-drawer-container>
