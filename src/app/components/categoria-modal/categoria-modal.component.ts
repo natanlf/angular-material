@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-categoria-modal',
@@ -8,9 +9,19 @@ import { MatDialogRef } from '@angular/material';
 })
 export class CategoriaModalComponent implements OnInit {
 
-  constructor(public dialogRef: MatDialogRef<any>) { }
+  isLinear = false;
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
+
+  constructor(public dialogRef: MatDialogRef<any>, private _formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.firstFormGroup = this._formBuilder.group({
+      firstCtrl: ['', Validators.required]
+    });
+    this.secondFormGroup = this._formBuilder.group({
+      secondCtrl: ['', Validators.required]
+    });
   }
 
   close(){
@@ -18,6 +29,11 @@ export class CategoriaModalComponent implements OnInit {
   }
 
   save(){
-    this.dialogRef.close({key: "work"})
+    if(this.firstFormGroup.valid && this.secondFormGroup.valid){
+      this.dialogRef.close({key: "work"})
+    }else {
+      console.log("Preencha os dados")
+    }
+    
   }
 }
