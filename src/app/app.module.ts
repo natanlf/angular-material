@@ -14,6 +14,7 @@ import { HeaderComponent } from './components/shared/header/header.component';
 import { CategriaComponent } from './components/categria/categria.component';
 import { InputComponent } from './shared/input/input.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { CategoriaModalComponent } from './components/categoria-modal/categoria-modal.component';
 
 @NgModule({
   declarations: [
@@ -22,8 +23,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     AboutComponent,
     HeaderComponent,
     CategriaComponent,
-    InputComponent
+    InputComponent,
+    CategoriaModalComponent
   ],
+  entryComponents: [ CategoriaModalComponent ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -34,6 +37,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     FlexLayoutModule,
     RouterModule.forRoot(ROUTES)
   ],
+  exports: [ CategoriaModalComponent ],
   providers: [],
   bootstrap: [AppComponent]
 })
