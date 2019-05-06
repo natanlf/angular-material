@@ -15,6 +15,8 @@ import { CategriaComponent } from './components/categria/categria.component';
 import { InputComponent } from './shared/input/input.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CategoriaModalComponent } from './components/categoria-modal/categoria-modal.component';
+import { CategoriaService } from './services/categoria.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -35,10 +37,11 @@ import { CategoriaModalComponent } from './components/categoria-modal/categoria-
     DragDropModule,
     ReactiveFormsModule,
     FlexLayoutModule,
+    HttpClientModule,
     RouterModule.forRoot(ROUTES)
   ],
   exports: [ CategoriaModalComponent ],
-  providers: [],
+  providers: [CategoriaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

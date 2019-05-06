@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
-import { MatDialog } from '@angular/material';
+import { MatDialog, MatPaginator, PageEvent, MatTableDataSource, MatSort } from '@angular/material';
 import { CategoriaModalComponent } from '../categoria-modal/categoria-modal.component';
+import { CategoriaService } from 'src/app/services/categoria.service';
 
 export interface Transaction {
   item: string;
@@ -14,6 +15,12 @@ export interface Transaction {
   styleUrls: ['./categria.component.css']
 })
 export class CategriaComponent implements OnInit {
+
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+
+  dataSource: MatTableDataSource<any>;
+  pageEvent = new PageEvent();
+  @ViewChild(MatSort) sort: MatSort;
 
   displayedColumns = ['item', 'cost'];
   transactions: Transaction[] = [
@@ -34,7 +41,8 @@ export class CategriaComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private categoriaService: CategoriaService
     ) { }
 
   ngOnInit() {
@@ -43,9 +51,35 @@ export class CategriaComponent implements OnInit {
     }) //vamos validar um grupo, chamamos o método abaixo
   }
 
+  searchClient() {
+    this.pageEvent.pageIndex = 0;
+    this.pageEvent.pageSize = 10;
+    //this.getClientList(this.pageEvent);
+  }
+
   save(e) {
     console.log(e)
   }
+
+  getCategoriaList(event?: PageEvent){
+    console.log(event)
+    this.categoriaService.find(event.pageIndex, event.pageSize)
+    .subscribe(
+      resp => console.log(resp),
+      error=>console.log(error))
+  }
+
+  /*getCategoriaList(event?: PageEvent) {
+    this.service.filterWithPaging(event.pageIndex + 1, event.pageSize)
+      .subscribe((x) => {
+        this.dataSource = new MatTableDataSource<any>(x.data);
+        this.pageEvent.length = x.totalRegisters;
+        this.paginator.pageIndex = event.pageIndex;
+      },
+      error => {
+        console.log(error)
+      });
+  }*/
 
   addItem(){
     const dialogRef = this.dialog.open(CategoriaModalComponent);

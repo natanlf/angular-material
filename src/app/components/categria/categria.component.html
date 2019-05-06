@@ -40,6 +40,12 @@
               <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
               <tr mat-footer-row *matFooterRowDef="displayedColumns; sticky: true"></tr>
             </table>
+
+            <mat-paginator [length]="100"
+                  [pageSize]="10"
+                  [pageSizeOptions]="[5, 10, 25, 100]"
+                  (page)="getCategoriaList($event)">
+            </mat-paginator>
           </div>  
       </div>
       <div class="row">
