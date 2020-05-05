@@ -2,22 +2,20 @@
     <table style="width: 98% !important;" matSort (matSortChange)="sortData($event)">
         <thead>
             <tr>
-                <th class="w-60-p" mat-sort-header="name">Dessert (100g)</th>
-                <th class="w-10-p" mat-sort-header="calories">Calories</th>
-                <th class="w-10-p" mat-sort-header="fat">Fat (g)</th>
-                <th class="w-10-p" mat-sort-header="carbs">Carbs (g)</th>
-                <th class="w-10-p" mat-sort-header="protein">Protein (g)</th>
+                <th class="w-70-p" mat-sort-header="clienteNome">Cliente / Assunto</th>
+                <th class="w-10-p" mat-sort-header="modalidade">Modalidade</th>
+                <th class="w-10-p" mat-sort-header="faturador">Faturador</th>
+                <th class="w-10-p" mat-sort-header="total">Total</th>
             </tr>
         </thead>
     </table>
     <div style="width: 100% !important;" class="box-table">
         <table style="width: 100% !important;">
             <tr *ngFor="let dessert of sortedData">
-                <td class="w-60-p p-0">{{dessert.name}}</td>
-                <td class="w-10-p p-0">{{dessert.calories}}</td>
-                <td class="w-10-p p-0">{{dessert.fat}}</td>
-                <td class="w-10-p p-0">{{dessert.carbs}}</td>
-                <td class="w-10-p p-0">{{dessert.protein}}</td>
+                <td class="w-70-p p-0">{{dessert.clienteNome}} -{{dessert.assuntoNome}}</td>
+                <td class="w-10-p p-0">{{dessert.modalidade}}</td>
+                <td class="w-10-p p-0">{{dessert.faturador}}</td>
+                <td class="w-10-p p-0">{{dessert.total}}</td>
             </tr>
         </table>  
     </div>

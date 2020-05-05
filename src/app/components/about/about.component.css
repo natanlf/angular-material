@@ -21,6 +21,10 @@
     width: 60%;
 }
 
+.w-70-p {
+    width: 70% !important;
+}
+
 .w-20-p {
     width: 20% !important;
 }
