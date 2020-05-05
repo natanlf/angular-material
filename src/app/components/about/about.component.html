@@ -1,4 +1,30 @@
 <div class="container">
-    <div class="pt-4">I only have a top padding (1.5rem = 24px)</div>
+    <table style="width: 98% !important;" matSort (matSortChange)="sortData($event)">
+        <thead>
+            <tr>
+                <th class="w-60-p" mat-sort-header="name">Dessert (100g)</th>
+                <th class="w-10-p" mat-sort-header="calories">Calories</th>
+                <th class="w-10-p" mat-sort-header="fat">Fat (g)</th>
+                <th class="w-10-p" mat-sort-header="carbs">Carbs (g)</th>
+                <th class="w-10-p" mat-sort-header="protein">Protein (g)</th>
+            </tr>
+        </thead>
+    </table>
+    <div style="width: 100% !important;" class="box-table">
+        <table style="width: 100% !important;">
+            <tr *ngFor="let dessert of sortedData">
+                <td class="w-60-p p-0">{{dessert.name}}</td>
+                <td class="w-10-p p-0">{{dessert.calories}}</td>
+                <td class="w-10-p p-0">{{dessert.fat}}</td>
+                <td class="w-10-p p-0">{{dessert.carbs}}</td>
+                <td class="w-10-p p-0">{{dessert.protein}}</td>
+            </tr>
+        </table>  
+    </div>
+      
+      
+      <!-- Copyright 2019 Google LLC. All Rights Reserved.
+          Use of this source code is governed by an MIT-style license that
+          can be found in the LICENSE file at http://angular.io/license -->
 </div>
 
