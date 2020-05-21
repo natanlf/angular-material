@@ -1,7 +1,7 @@
 .box-table {
     /*display: contents !important;*/
     width: 100% !important;
-    height: 70px !important;
+    height: 100px !important;
     overflow-y: auto !important;
 }
 

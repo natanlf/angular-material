@@ -2,7 +2,12 @@
     <table style="width: 98% !important;" matSort (matSortChange)="sortData($event)">
         <thead>
             <tr>
-                <th class="w-70-p" mat-sort-header="clienteNome">Cliente / Assunto</th>
+                <th class="w-70-p">
+                    <div class="flex-row d-flex align-items-center w-100-p">
+                        Cliente / Assunto
+                        <div mat-sort-header="clienteNome"></div> <div mat-sort-header="assuntoNome"></div>
+                    </div>
+                </th>
                 <th class="w-10-p" mat-sort-header="modalidade">Modalidade</th>
                 <th class="w-10-p" mat-sort-header="faturador">Faturador</th>
                 <th class="w-10-p" mat-sort-header="total">Total</th>
