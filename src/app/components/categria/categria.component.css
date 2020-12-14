@@ -37,5 +37,9 @@
     margin-left: 72px;
   }
 
+  .c-pointer:hover {
+    cursor: pointer;
+  }
+
   
   

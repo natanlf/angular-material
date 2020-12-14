@@ -49,6 +49,13 @@ export class CategriaComponent implements OnInit {
     this.orderForm = this.formBuilder.group({
       name: this.formBuilder.control('', [Validators.required, Validators.minLength(5)])
     }) //vamos validar um grupo, chamamos o método abaixo
+
+    this.feedback();
+  }
+
+  ngOnDestroy() {
+    this.categoriaService.skipClicked.unsubscribe();
+    console.log("Destruído")
   }
 
   searchClient() {
@@ -89,6 +96,15 @@ export class CategriaComponent implements OnInit {
         console.log(data)
       }
     });
+  }
+
+  EmitByService() {
+    console.log("Emit");
+    this.categoriaService.skipClicked.next(true);
+  }
+
+  feedback() {
+    this.categoriaService.skipClicked.subscribe(resp => console.log(resp))
   }
 
 }

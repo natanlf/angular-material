@@ -1,8 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable()
 export class CategoriaService {
+
+    skipClicked: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
     constructor(public http: HttpClient){}
 
