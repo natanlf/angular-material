@@ -1,0 +1,12 @@
+<mat-accordion>
+    <mat-expansion-panel (opened)="panelOpenState = false"
+                         (closed)="panelOpenState = true"
+                         [style.background-color]="colorCard">
+        <mat-expansion-panel-header [style.background-color]="colorCard">
+        <mat-panel-title [style.color]="titleColor">
+            {{title}}
+        </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p [style.color]="descriptionColor">{{description}}</p>
+    </mat-expansion-panel>
+</mat-accordion>       

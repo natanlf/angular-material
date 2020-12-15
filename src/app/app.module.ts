@@ -17,6 +17,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { CategoriaModalComponent } from './components/categoria-modal/categoria-modal.component';
 import { CategoriaService } from './services/categoria.service';
 import { HttpClientModule } from '@angular/common/http';
+import { SharedModule } from './shared/modules/shared.module';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     FlexLayoutModule,
     HttpClientModule,
+    SharedModule,
     RouterModule.forRoot(ROUTES)
   ],
   exports: [ CategoriaModalComponent ],

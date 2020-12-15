@@ -1,3 +1,8 @@
 button.mat-menu-item a {
     color: black;
 }
+
+.mat-toolbar.mat-primary {
+    background: #263238 !important;
+    color: white;
+}
