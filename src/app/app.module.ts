@@ -18,6 +18,7 @@ import { CategoriaModalComponent } from './components/categoria-modal/categoria-
 import { CategoriaService } from './services/categoria.service';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/modules/shared.module';
+import { CategoriaFormComponent } from './components/categoria-form/categoria-form.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { SharedModule } from './shared/modules/shared.module';
     AboutComponent,
     HeaderComponent,
     CategriaComponent,
+    CategoriaFormComponent, //[TO DO] => Criar um módulo para categoria e colcar tudo referente a categoria nele
     InputComponent,
     CategoriaModalComponent
   ],
